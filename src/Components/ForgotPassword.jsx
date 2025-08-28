@@ -4,7 +4,7 @@ const ForgotPassword = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#000b1e]">
       <div
-        className="backdrop-blur-xl bg-[#10172a]/80 shadow-2xl rounded-2xl p-10 w-full max-w-md border-2 border-[#2e3a68] outline outline-2 outline-[#ff6f91]/30"
+        className="backdrop-blur-xl bg-[#10172a]/80 shadow-2xl rounded-2xl p-10 w-full max-w-md border-2 border-[#2e3a68] outline-2 outline-[#ff6f91]/30"
       >
         {/* Title */}
         <h2 className="text-2xl font-bold text-center text-indigo-400 mb-6 drop-shadow-md">
