@@ -1,0 +1,59 @@
+.toggle-switch-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* Background of toggle */
+.toggle-switch {
+  position: relative;
+  width: 220px;
+  height: 56px;
+  background: #000b1e; /* dark background */
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(255, 111, 145, 0.5), 0 2px 8px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Pink glowing circle */
+.toggle-circle {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  width: 40px;
+  height: 40px;
+  background: #000b1e; 
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(255, 143, 163, 0.7);
+  transition: left 0.3s, box-shadow 0.3s, border 0.3s;
+  border: 2px solid #ff9eb5;
+}
+
+/* When toggled → circle goes right */
+.toggle-circle.toggled {
+  left: 168px; /* moves to right */
+  box-shadow: 0 0 20px rgba(255, 111, 145, 0.8);
+  border: 2px solid #ff6f91;
+}
+
+/* Label default (Login) */
+.toggle-label {
+  position: absolute;
+  right: 24px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ff9eb5;
+  letter-spacing: 1px;
+  transition: color 0.3s, left 0.3s;
+  user-select: none;
+}
+
+/* Label active (Sign Up) */
+.toggle-label.active {
+  left: 24px;
+  color: #ff6f91; 
+  right: auto;
+}
