@@ -9,43 +9,44 @@
   position: relative;
   width: 220px;
   height: 56px;
-  background: #000b1e; /* dark background */
+  background: #0b0e14; /* dark base */
   border-radius: 40px;
-  box-shadow: 0 0 20px rgba(255, 111, 145, 0.5), 0 2px 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 2px 8px rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   cursor: pointer;
   transition: background 0.3s, box-shadow 0.3s;
+  border: 2px solid rgba(99, 102, 241, 0.4);
 }
 
-/* Pink glowing circle */
+/* Indigo glowing circle */
 .toggle-circle {
   position: absolute;
   left: 12px;
   top: 8px;
   width: 40px;
   height: 40px;
-  background: #000b1e; 
+  background: #0f1621; 
   border-radius: 50%;
-  box-shadow: 0 0 16px rgba(255, 143, 163, 0.7);
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.7);
   transition: left 0.3s, box-shadow 0.3s, border 0.3s;
-  border: 2px solid #ff9eb5;
+  border: 2px solid #6366f1;
 }
 
 /* When toggled → circle goes right */
 .toggle-circle.toggled {
   left: 168px; /* moves to right */
-  box-shadow: 0 0 20px rgba(255, 111, 145, 0.8);
-  border: 2px solid #ff6f91;
+  box-shadow: 0 0 20px rgba(79, 70, 229, 0.9);
+  border: 2px solid #4f46e5;
 }
 
 /* Label default (Login) */
 .toggle-label {
   position: absolute;
   right: 24px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #ff9eb5;
+  color: #a5b4fc; /* light indigo */
   letter-spacing: 1px;
   transition: color 0.3s, left 0.3s;
   user-select: none;
@@ -54,6 +55,6 @@
 /* Label active (Sign Up) */
 .toggle-label.active {
   left: 24px;
-  color: #ff6f91; 
+  color: #6366f1; /* bright indigo */
   right: auto;
 }
