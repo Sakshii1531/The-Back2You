@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import virtualVideo from "../assets/virtual-Qr-video.mp4";
+import virtualVideo from "../../assets/Videos/homepage-video.mp4";
+import {useNavigate} from "react-router-dom";
 
 /* Typing Animation for Back2You */
 const AnimatedTitle = () => {
@@ -50,6 +51,7 @@ const AnimatedTitle = () => {
 
 /* HomePage */
 const HomePage = () => {
+  const navigate = useNavigate();
   return (
     <div
       className="min-h-screen bg-gradient-to-r from-[#0B0E14] via-[#0F1621] to-[#0B0E14] 
@@ -72,6 +74,7 @@ const HomePage = () => {
         <button
           className="mt-6 px-8 py-4 text-white font-semibold rounded-full shadow-lg 
           bg-indigo-500 hover:bg-indigo-600 hover:scale-105 transition-all duration-300"
+          onClick={()=> navigate("/login-signup")}
         >
           Get Started
         </button>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Login from "./Login";
-import SignUp from "./SignUp";
-import "./ToggleSwitch.css";
+import Login from "../Auth/Login";
+import SignUp from "../Auth/SignUp";
+import "../Auth/ToggleSwitch.css";
 
 const AuthToggle = () => {
   const [isLogin, setIsLogin] = useState(true);

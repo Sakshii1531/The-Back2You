@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import boyVideo from "../assets/login-boy.mp4";
+import boyVideo from "../../assets/Videos/login-boy.mp4";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ handleToggle, isLogin }) => {
+  const navigate = useNavigate();
   return (
     <div className="w-full max-w-7xl min-h-[450px] flex flex-col md:flex-row rounded-2xl overflow-hidden transition-all duration-300 mx-auto bg-gradient-to-r from-[#111827] via-[#0f172a] to-[#1e293b] shadow-[0_0_30px_rgba(79,70,229,0.3)]">
       
@@ -71,12 +73,28 @@ const Login = ({ handleToggle, isLogin }) => {
         <motion.button
           whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(99,102,241,0.6)" }}
           whileTap={{ scale: 0.95 }}
-          className="w-full py-3 text-white font-bold rounded-full transition text-base tracking-wide mt-2 bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400"
+          className="w-full py-3 text-white font-bold rounded-full transition text-base tracking-wide mt-2 bg-gradient-to-r from-indigo-600
+           via-indigo-500 to-indigo-400"
+           onClick={() => navigate("/instructions")}
         >
           {isLogin ? "Login" : "Create Account"}
         </motion.button>
+
+         {isLogin && (
+  <div className="mt-4 text-center">
+    <a
+      href="/forgot-password"
+      className="text-md text-bold text-indigo-400 hover:underline hover:text-indigo-300 transition"
+    >
+      Forgot Password?
+    </a>
+  </div>
+)}
       </motion.div>
+
     </div>
+
+    
   );
 };
 

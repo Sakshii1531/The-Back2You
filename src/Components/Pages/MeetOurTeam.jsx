@@ -1,6 +1,6 @@
 import React from "react";
-import sakshiImg from "../assets/sakshi.jpg";
-import ishaImg from "../assets/isha.jpg";
+import sakshiImg from "../../assets/Images/sakshi.jpg";
+import ishaImg from "../../assets/Images/isha.jpg";
 
 const teamMembers = [
   {
