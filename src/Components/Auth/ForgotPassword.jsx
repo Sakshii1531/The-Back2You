@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
+import { Link } from "react-router-dom";
+
 
 const ForgotPassword = () => {
+  
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -49,9 +52,9 @@ const ForgotPassword = () => {
         {/* Back to Login */}
         <p className="mt-6 text-center text-gray-400 text-sm">
           Remember your password?{" "}
-          <a href="/login" className="text-indigo-400 hover:underline">
-            Back to Login
-          </a>
+          <Link to="/login-signup" className="text-blue-400 hover:underline">
+              Back to Login
+          </Link>
         </p>
       </div>
     </div>

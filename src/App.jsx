@@ -1,37 +1,54 @@
 import React from "react";
-import Navbar from "./Components/Navbar";
-import HomePage from "./Components/HomePage";
-import AuthToggle from "./Components/AuthToggle";
-import ForgotPassword from "./Components/ForgotPassword";
-import InstructionsPage from "./Components/InstructionPage";
-import Dashboard from "./Components/Dashboard";
-import AboutUs from "./Components/AboutUs";
-import MeetOurTeam from "./Components/MeetOurTeam";
-import ChatSection from "./Components/ChatSection";
-import QRGenerator from "./Components/QRGenerator";
-import ThankYou from "./Components/ThankYou";
-import Footer from "./Components/Footer";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import Navbar from "./Components/Pages/Navbar";
+import HomePage from "./Components/Pages/HomePage";
+import AuthToggle from "./Components/Auth/AuthToggle";
+import ForgotPassword from "./Components/Auth/ForgotPassword";
+import InstructionsPage from "./Components/Pages/InstructionPage";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import AboutUs from "./Components/Pages/AboutUs";
+import MeetOurTeam from "./Components/Pages/MeetOurTeam";
+import ChatSection from "./Components/Dashboard/ChatSection";
+import QRGenerator from "./Components/Imp-Process/QRGenerator";
+import ThankYou from "./Components/Pages/ThankYou";
+import Footer from "./Components/Pages/Footer";
+import RegisterItem from "./Components/Pages/RegisterItem";
 
-
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
 
 function App() {
+  const location = useLocation();
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#0B0E14] via-[#0F1621] to-[#0B0E14] text-white flex flex-col">
-      <Navbar />
-      <HomePage />
-      <AuthToggle/>
-      <ForgotPassword/>
-      <InstructionsPage/>
-      <Dashboard/>
-      <AboutUs/>
-      <MeetOurTeam/>
-      <ChatSection/>
-      <QRGenerator/>
-      <ThankYou/>
+    <div >
+      {location.pathname==="/" && <Navbar/>}
+
+        <Routes>
+
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/login-signup" element={<AuthToggle/>} />
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="/instructions" element={<InstructionsPage/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
+          <Route path="/about" element={<AboutUs/>} />
+          <Route path="/meet-our-team" element={<MeetOurTeam/>} />
+          <Route path="/chats" element={<ChatSection/>} />
+          <Route path="/QR" element={<QRGenerator/>} />
+          <Route path="/thank-you" element={<ThankYou/>} />
+          <Route path="/register-item" element={<RegisterItem />} />
+
+          
+
+        </Routes>
+
       <Footer/>
-      
     </div>
   );
 }
 
-export default App;
+export default AppWrapper;

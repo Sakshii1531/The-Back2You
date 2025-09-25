@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const steps = [
   { id: 1, text: "Sign in or create an account to save your progress." },
@@ -12,6 +13,7 @@ const steps = [
 ];
 
 const InstructionPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="w-full min-h-screen bg-gradient-to-r from-[#0B0E14] via-[#0F1621] to-[#0B0E14] p-10 flex flex-col items-center">
       
@@ -63,7 +65,9 @@ const InstructionPage = () => {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="mt-10 px-6 py-2 bg-indigo-600 text-white font-medium rounded-full shadow-md hover:bg-indigo-500 hover:shadow-indigo-400/40 transition duration-300 text-sm"
+        className="mt-10 px-6 py-2 bg-indigo-600 text-white font-medium rounded-full shadow-md
+         hover:bg-indigo-500 hover:shadow-indigo-400/40 transition duration-300 text-sm"
+         onClick={() => navigate("/register-item")}
       >
         Continue ➔
       </motion.button>

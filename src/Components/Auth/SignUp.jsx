@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import boyVideo from "../assets/login-boy.mp4";
+import boyVideo from "../../assets/Videos/login-boy.mp4";
 
 const SignUp = ({ handleToggle, isLogin }) => {
+  const navigate = useNavigate();
   return (
     <div className="w-full max-w-7xl min-h-[350px] flex flex-col md:flex-row bg-gradient-to-r from-[#0B0E14] via-[#0F1621] to-[#0B0E14] 
     rounded-2xl shadow-2xl overflow-hidden mx-auto">
@@ -131,9 +133,10 @@ const SignUp = ({ handleToggle, isLogin }) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="w-full py-2.5 text-white font-bold rounded-full shadow-lg transition text-base tracking-wide mt-2"
+          onClick={() => navigate("/instructions")}
           style={{
             backgroundImage:
-              "linear-gradient(to right, #6366f1, #4f46e5, #4338ca)",
+              "linear-gradient(to right, #6366f1, #4f46e5, #4338ca)",  
           }}
         >
           Sign Up
